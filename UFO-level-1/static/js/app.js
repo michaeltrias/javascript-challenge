@@ -22,6 +22,16 @@ var form = d3.select("#datetime");
 button.on("click", runEnter);
 form.on("submit", runEnter);
 
+// finds tbody and adds all of tableData to the webpage
+var tbody = d3.select("tbody");
+   
+
+tableData.forEach((date) => { tbody.append("tr");
+        Object.entries(date).forEach(([key,value]) => {
+        tbody.append("td").text(value);
+
+})});
+
 //Create function to run for both events
 
 function runEnter() {
